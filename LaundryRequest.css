@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.dashBoardHeading{
+    display: flex;
+    height: 50px;
+    background-color: #393646;
+    color: white;
+    padding: 10px;
+    justify-content: space-between;
+}
+.LMSHead{
+    font-size: 40px;
+    font-weight: 500;
+    margin-left: 50px;
+}
+.logoutIcon{
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    cursor: pointer;
+}
+.helloMsg{
+    font-size: 20px;
+    padding-top: 12px;
+}
+.profilePhoto{
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.dashboardBody{
+    display: flex;  
+    height: 683px;
+    width: 100%; 
+    color: white; 
+}
+.dashboardMenu{
+    width: 340px;
+    background-color: #2C3333;
+    height: 100%;
+}
+.menuItems{
+    height: 80px;
+    border: 2px white solid;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+}
+.menuItems:hover{
+    background-color: #4e5a5a;
+}
+.iconImage{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    margin-top: 20px;
+}
+.menuText{
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+
+
+.RequestForm{
+    background-color: #fff;
+    display: inline-block;
+    padding: 1rem;
+    width: 650px;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    color: black;
+}
+.inputContainer{
+    background-color: #fff;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 280px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.inputField{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.selectContainer{
+    background-color: #fff;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 347px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.inputLabel{
+    margin-top: 20px;
+}
+.submit {
+    display: block;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: #4F46E5;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    width: 240px;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    margin-top: 40px;
+  }
+  .successMsg{
+    background-color: #82CD47e0;
+    height: 60px;
+    width: 300px;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 40px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: none;
+  }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="LoginPage.css">
+
+<body>
+    <header class="headingText">
+        <p class="WelcomeText">
+            Welcome to Laundry Management System
+        </p>
+    </header>
+    <section class="formSection">
+
+        <form class="form">
+            <p class="form-title">Sign in to your account</p>
+            <div class="input-container">
+                <input type="text" placeholder="Enter User Name" id="UserLoginInput">
+                <span>
+                </span>
+            </div>
+            <div class="input-container">
+                <input type="password" placeholder="Enter password" id="PasswordLoginInput">
+            </div>
+                <button type="button" class="submitBtn" onclick="LogIn()">
+                    Sign in
+                </button>
+            <a href="registerPage.html">
+                <button class="submitBtn" type="button">
+                    Sign up
+                </button></a>
+
+
+            <p class="signup-link">
+                <a href="ForgotPasword.html">Forgot Password</a>
+            </p>
+        </form>
+
+    </section>
+
+</body>
+<script src="main.js"></script>
+
+</html>

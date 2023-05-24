@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="ForgotPassword.css">
+<body>
+
+    <header class="headingText">
+        <p class="WelcomeText">
+            Welcome to Laundry Management System
+        </p>
+    </header>
+
+    
+    <form class="form">
+        <p class="form-title">Sign in to your account</p>
+         <div class="input-container">
+           <input placeholder="Enter email" type="email" id="ForgotEmail">
+       </div>
+       <div class="input-container">
+           <input placeholder="Enter User Name" type="text" id="ForgotUname">
+         </div>
+          <button class="submit" type="button" onclick="ForgotPassword()">
+         Get Password
+       </button>
+       <a href="LoginPage.html">
+       <button class="submit" type="button">
+        Back
+      </button>
+    </a>
+
+    <div class="successMsg" id="successMsg">
+        <p>Your password is :</p><br>
+        <p id="Password"></p></div>
+    </form>
+ 
+    
+</body>
+<script src="main.js"></script>
+</html>

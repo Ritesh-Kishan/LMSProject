@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="registerStyle.css">
+<script src="main.js"></script>
+<body>
+    <header class="headingText">
+        <p class="WelcomeText">
+            Welcome to Laundry Management System
+        </p>
+    </header>
+
+    <h2 class="registerRequest">Glad to see you. Please register your self here.</h2>
+
+    <section class="registerSection">
+        <form class="form">
+            <p class="title">Register </p>
+            <p class="message">Signup now and get full access to our app. </p>
+                <label>
+                    <input required="" placeholder="" type="text" class="input" id="registerFname">
+                    <span>Firstname</span>
+                </label>
+
+            <label>
+                <input required="" placeholder="" type="email" class="input" id="registerEmail">
+                <span>Email</span>
+            </label>
+
+            <label>
+                <input required="" placeholder="" type="number" class="input" id="registerPhone">
+                <span>Phone Number</span>
+            </label>
+            <label>
+                <input required="" placeholder="" type="text" class="input" id="registerUname">
+                <span>User Name</span>
+            </label>
+            <label>
+                <input required="" placeholder="" type="password" class="input" id="registerPassword">
+                <span>Password</span>
+            </label>
+            <button class="submit" type="button" id="registerSubmit" onclick="RegisterSubmit()">Submit</button>
+            <p class="signin">Already have an acount ? <a href="LoginPage.html">Signin</a> </p>
+        </form>
+
+        <div class="promptMsg" id="promptMsg">
+            <div class="registerPromptMessage" id="registerPromptMessage">Enter Valid input</div>
+        </div>
+    </section>
+
+</body>
+
+</html>
