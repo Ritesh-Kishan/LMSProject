@@ -84,13 +84,13 @@ function RegisterSubmit() {
 
 // on clicking signin button in login page
 
-
 function LogIn() {
     const UserLoginName = document.getElementById("UserLoginInput");
     const PasswordLoginInput = document.getElementById("PasswordLoginInput");
     var userData;
     // Fetching data from the Mock Api.
     fetch("https://6434f30f83a30bc9ad545d2d.mockapi.io/mockdata").then((data) => {
+      
         return data.json();
     })
         .then((objectData) => {
@@ -114,7 +114,6 @@ function LogIn() {
 
 
 function submitRequest() {
-
 
     const requestDate = document.getElementById("date");
     const requestTop = document.getElementById("top");
@@ -195,15 +194,19 @@ function ForgotPassword() {
 
 }
 
-
+var a=0;
 // On clicking show details in the dashboard page
 function ShowAccepted() {
+
     document.getElementById("DetailsPage").style.display = "block";
     fetch("https://6434f30f83a30bc9ad545d2d.mockapi.io/mockdata/"+document.cookie)
     .then((data) => {
         return data.json();
     })
     .then((Objectdata) =>{
+
+        if(a==0){
+            a++;
 
         for(var i=0;i<Objectdata.LMSrequest.length;i++){
 
@@ -216,7 +219,6 @@ function ShowAccepted() {
             SubmitDate.className='SubmitDetails';
             SubmitDate.innerHTML="date :"+Objectdata.LMSrequest[i].Date;
 
-
             const SubmitTop = document.createElement('div');
             SingleDetail.appendChild(SubmitTop);
             SubmitTop.className='SubmitDetails';
@@ -226,8 +228,6 @@ function ShowAccepted() {
             SingleDetail.appendChild(SubmitBottom);
             SubmitBottom.className='SubmitDetails';
             SubmitBottom.innerHTML="Bottom Wear :"+Objectdata.LMSrequest[i].BottomWear;
-
-
 
             const SubmitWollen = document.createElement('div');
             SingleDetail.appendChild(SubmitWollen);
@@ -249,6 +249,7 @@ function ShowAccepted() {
             SubmitDesc.className='SubmitDetails';
             SubmitDesc.innerHTML="Description :"+Objectdata.LMSrequest[i].Description;
         }
+    }
     })
 
 }
@@ -256,6 +257,7 @@ function ShowAccepted() {
 // On clicking close button in the request details display 
 function closeDisplay(){
     document.getElementById("DetailsPage").style.display = "none";
+    SingleDetail.remove();
 }
 
 // On clicking change password
