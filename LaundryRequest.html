@@ -19,7 +19,7 @@
                 alt=""></a>
             Laundry Management System
         </div>
-        <div class="helloMsg">Hii, ritesh
+        <div class="helloMsg">
             <img class="profilePhoto"
                 src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Image-Background.png" alt="">
         </div>
@@ -54,16 +54,37 @@
                 <input type="date" placeholder="Enter Pickup Date" class="inputContainer" id="date">
             </div>
             <div class="inputField">
-                <label for="top" class="inputLabel">Top Wear</label>
-                <input type="number" placeholder="Enter Number of top wear" class="inputContainer" id="top">
+                <label for="top" class="inputLabel">Top Wear &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <!-- <input type="number" placeholder="Enter Number of top wear" class="inputContainer" id="top"> -->
+                <select class="inputclothContainer" id="top">
+                    <option selected>Top Wear</option>
+                    <option>Shirt</option>
+                    <option>T-Shirt</option>
+                    <option>Kurti</option>
+                </select>
+                <input type="number" id="TopwearNumber" placeholder="Number of top wear" class="inputNumber">
             </div>
             <div class="inputField">
                 <label for="bottom" class="inputLabel">Bottom Wear</label>
-                <input type="number" placeholder="Enter Number of Bottom wear" class="inputContainer" id="bottom">
+                <!-- <input type="number" placeholder="Enter Number of Bottom wear" class="inputContainer" id="bottom"> -->
+                <select class="inputclothContainer" id="bottom">
+                    <option selected>Bottom Wear</option>
+                    <option>Trouser</option>
+                    <option>Half Pants</option>
+                    <option>Pants</option>
+                </select>
+                <input type="number" id="bottomwearNumber" placeholder="Number of bottom wear" class="inputNumber">
             </div>
             <div class="inputField">
                 <label for="woolen" class="inputLabel">Woolen Cloth</label>
-                <input type="number" placeholder="Enter Number of Woolen wear" class="inputContainer" id="woolen">
+                <!-- <input type="number" placeholder="Enter Number of Woolen wear" class="inputContainer" id="woolen"> -->
+                <select class="inputclothContainer" id="woolen">
+                    <option selected>Woolen Wear</option>
+                    <option>Jacket</option>
+                    <option>Sweat Wear</option>
+                    <option>Blancket</option>
+                </select>
+                <input type="number" id="woolenwearNumber" placeholder="Number of woolen wear" class="inputNumber">
             </div>
             <div class="inputField">
                 <label for="service" class="inputLabel">Select service type</label>
@@ -84,7 +105,7 @@
             <button class="submit" type="submit" onclick="submitRequest()">
                 Submit Request
             </button>
-            <div class="successMsg" id="successMsg">Submitted sucessfully</div>
+            <div class="successMsg" id="successMsg"></div>
         </div>
 
     </section>

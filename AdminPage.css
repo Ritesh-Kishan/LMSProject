@@ -1,0 +1,110 @@
+*{
+    padding: 0px;
+    margin: 0%;
+}
+body{
+    background-color: #E6FFFD;
+}
+.welcomeMsg{
+    background-color: #9DB2BF;
+    height: 14vh;
+    color: black;
+    font-family: sans-serif;
+    font-size: 500;
+    font-size: 35px;
+}
+.Message{
+    margin-left: 38%;
+    padding-top: 30px;
+}
+.AdminBody{
+    background-color: #E6FFFD;
+}
+.ShowMsg{
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-left: 40%;
+    padding-top: 30px;
+}
+.showMsg{
+    background-color: #FC4F00;
+    height: 50px;
+    width: 140px;
+    margin-left: 20%;
+    margin-top: 50px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+.showMsg:hover{
+    background-color: #ff873c;
+}
+.SingleUser{
+    background-color: #FEFF86;
+    border-radius: 12px;
+    width: 800px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 20px;
+    padding-left: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.UserRequest{
+    margin-top: 50px;
+    color: black;
+    font-family: sans-serif;
+}
+.UserDetailText{
+margin-bottom: 8px;
+}
+.UserLMSRequest{
+    background-color: #dfb5b5;
+    width: 60%;
+    margin-left: 13%;
+    border-radius: 10px;
+    padding: 10px;
+}
+.SubmitDetails{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.RequestText{
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 18%;
+    font-weight: 600;
+}
+.RequestNumber{
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+.CompletedButton{
+    background-color: #FC4F00;
+    height: 50px;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    width: 120px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-left: 300px;
+}
+.CompletedButton:hover{
+    background-color: #ff873c;
+}
+.AcceptedButton{
+    background-color: #FC4F00;
+    height: 50px;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    width: 120px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-left: 300px;
+}
+.AcceptedButton:hover{
+    background-color: #ff873c;
+}

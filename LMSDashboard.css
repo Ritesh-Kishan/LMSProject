@@ -174,3 +174,15 @@ footer{
     margin: 10px;
     margin-left: 80px;
 }
+.CompletedMsg{
+    font-size: 22px;
+    margin-left: 10px;
+    font-weight: 600;
+    color: red;
+}
+.ProcessedMsg{
+    font-size: 22px;
+    font-weight: 600;
+    margin-left: 10px;
+    color: rgb(6, 93, 6);
+}
