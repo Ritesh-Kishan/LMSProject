@@ -156,7 +156,8 @@ function submitRequest() {
           Description: requestDesc.value,
           RequestId : RequestId,
           Processed : false,
-          Completed : false
+          Completed : false,
+          Delivered : false
         };
         var LmsRequest;
         var link = "https://6434f30f83a30bc9ad545d2d.mockapi.io/mockdata/" + document.cookie;
@@ -243,6 +244,8 @@ function ShowAccepted() {
         a++;
 
         for (var i = 0; i < Objectdata.LMSrequest.length; i++) {
+
+          if(Objectdata.LMSrequest[i].Delivered == false){
           const SingleDetail = document.createElement("div");
           DetailsPage.appendChild(SingleDetail);
           SingleDetail.className = "SingleDetail";
@@ -261,7 +264,7 @@ function ShowAccepted() {
           SingleDetail.appendChild(SubmitBottom);
           SubmitBottom.className = "SubmitDetails";
           SubmitBottom.innerHTML =
-            "Bottom Wear :" + Objectdata.LMSrequest[i].BottomWear;
+          "Bottom Wear :" + Objectdata.LMSrequest[i].BottomWear;
 
           const SubmitWollen = document.createElement("div");
           SingleDetail.appendChild(SubmitWollen);
@@ -293,7 +296,6 @@ function ShowAccepted() {
                 const ProcessedMsg = document.createElement("div");
                 SingleDetail.appendChild(ProcessedMsg);
                 ProcessedMsg.className = "ProcessedMsg";
-                // ProcessedMsg.style.color = "Green"
                 ProcessedMsg.innerHTML = "Processed"
             }
             if(Objectdata.LMSrequest[i].Completed == true){
@@ -301,22 +303,14 @@ function ShowAccepted() {
                 SingleDetail.appendChild(CompletedMsg);
                 CompletedMsg.className = "CompletedMsg";
                 CompletedMsg.innerHTML = "Completed! You can Collect your Cloth"
-
-                // const ReceivedBtn = document.createElement("button");
-                // SingleDetail.appendChild(ReceivedBtn);
-                // ReceivedBtn.className = "ReceivedBtn";
-                // ReceivedBtn.innerHTML = "Received";
-                // ReceivedBtn.addEventListener('click', ReceivedFun.bind(this,Objectdata.LMSrequest[i].RequestId))                
             }
+                               
+            }
+
         }
       }
     });
 }
-
-// Received Button Functionality
-// function ReceivedFun(requestId){
-//     fetch("https://6434f30f83a30bc9ad545d2d.mockapi.io/mockdata/" + document.cookie)
-// }
 
 // On clicking close button in the request details display
 function closeDisplay() {
@@ -386,6 +380,7 @@ function ShowDetails() {
       if (a == 0) {
         a++;
         for (var i = 0; i < objectData.length; i++) {
+
           const SingleUser = document.createElement("div");
           UserRequest.appendChild(SingleUser);
           SingleUser.className = "SingleUser";
@@ -411,6 +406,8 @@ function ShowDetails() {
           RequestText.innerHTML = "Request Submitted by " + objectData[i].Fname;
 
           for (var j = 0; j < objectData[i].LMSrequest.length; j++) {
+
+            if(objectData[i].LMSrequest[j].Delivered == false){
             const UserLMSRequest = document.createElement("div");
             SingleUser.appendChild(UserLMSRequest);
             UserLMSRequest.className = "UserLMSRequest";
@@ -435,6 +432,13 @@ function ShowDetails() {
             processBtn.innerHTML = "Process";
             processBtn.addEventListener("click",StartProcessingFun.bind(this,objectData[i].id,objectData[i].LMSrequest[j].RequestId));
             }
+            if(objectData[i].LMSrequest[j].Processed == true && objectData[i].LMSrequest[j].Completed == true){
+              const ReceivedBtn = document.createElement("button");
+              UserLMSRequest.appendChild(ReceivedBtn);
+              ReceivedBtn.className = "ReceivedBtn";
+              ReceivedBtn.innerHTML = "Delivered";
+              ReceivedBtn.addEventListener('click', ReceivedFun.bind(this,objectData[i].id,objectData[i].LMSrequest[j].RequestId)) 
+          }
 
             const SubmitDate = document.createElement("div");
             UserLMSRequest.appendChild(SubmitDate);
@@ -477,6 +481,7 @@ function ShowDetails() {
             SubmitDesc.innerHTML =
               "Description :" + objectData[i].LMSrequest[j].Description;
           }
+        }
         }
       }
     });
@@ -531,7 +536,6 @@ function CompletetaskFun(userId, detailsId) {
     })
     .then(ShowDetails(),
     ShowAccepted())
-    // console.log(objectData.LMSrequest[detailsId-1].Completed,"after processed");
 
   })
   
@@ -573,4 +577,43 @@ function NewPasswordToggle(){
     const type = password.getAttribute('type') === 'password'? 'text' : 'password';
     password.setAttribute('type', type);
     passwordToggle.classList.toggle('bi-eye');
+}
+function ReceivedFun(userID, RequetID){
+  console.log(userID,RequetID,"this is tyis and thos");
+  fetch("https://6434f30f83a30bc9ad545d2d.mockapi.io/mockdata/"+userID)
+    .then((data) => {
+      return data.json();
+    })
+    .then((objectData) => {
+      objectData.LMSrequest[RequetID-1].Delivered = true;
+  
+  
+    fetch("https://6434f30f83a30bc9ad545d2d.mockapi.io/mockdata/"+userID, {
+      method: "PATCH",
+      body: JSON.stringify({
+          LMSrequest : objectData.LMSrequest
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+    .then(ShowDetails(),
+    ShowAccepted())
+})
+}
+function SigninPasswordToggle(){
+  const passwordToggle = document.getElementById("SigninPaswordIcon");
+  const password = document.getElementById("PasswordLoginInput");
+  console.log("Eye clicked");
+  const type = password.getAttribute('type') === 'password'? 'text' : 'password';
+  password.setAttribute('type', type);
+  passwordToggle.classList.toggle('bi-eye');
+}
+function SignupPasswordToggle(){
+  const passwordToggle = document.getElementById("SignupPasswordToggle");
+  const password = document.getElementById("registerPassword");
+  console.log("Eye clicked");
+  const type = password.getAttribute('type') === 'password'? 'text' : 'password';
+  password.setAttribute('type', type);
+  passwordToggle.classList.toggle('bi-eye');
 }

@@ -42,6 +42,7 @@
   }
   .input-container {
     position: relative;
+    display: flex;
   }
   .input-container input, .form button {
     outline: none;
@@ -84,4 +85,11 @@
     text-decoration: underline;
     font-family: sans-serif;
   }
-
+  .bi-eye-slash{
+    /* background-color: yellow; */
+    border-radius: 70%;
+    margin-left: -25px;
+    margin-top: 25px;
+    width: 16px;
+    height: 18.4px;
+  }

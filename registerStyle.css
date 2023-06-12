@@ -158,3 +158,12 @@
     padding-top: 20px;
     text-align: center;
   }
+  .bi-eye-slash{
+    background-color: yellow;
+    border-radius: 70%;
+    margin-left: -25px;
+    /* margin-top: 25px; */
+    width: 16px;
+    height: 18.4px;
+    display: inline-block;
+  }

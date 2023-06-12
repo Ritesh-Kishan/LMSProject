@@ -21,11 +21,10 @@
             <p class="form-title">Sign in to your account</p>
             <div class="input-container">
                 <input type="text" placeholder="Enter User Name" id="UserLoginInput">
-                <span>
-                </span>
             </div>
             <div class="input-container">
                 <input type="password" placeholder="Enter password" id="PasswordLoginInput">
+                <i class="bi bi-eye-slash toggleIcon" id="SigninPaswordIcon" onclick="SigninPasswordToggle()"></i>
             </div>
                 <button type="button" class="submitBtn" onclick="LogIn()">
                     Sign in
