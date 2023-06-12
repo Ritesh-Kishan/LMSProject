@@ -11,9 +11,9 @@ function RegisterSubmit() {
   const registerPassword = document.getElementById("registerPassword");
 
   // validation for Name.
-  if (registerFName.value == "") {
+  if (registerFName.value == "" || /[A-Z]/.test(registerFName.value)!=true) {
     document.getElementById("registerPromptMessage").innerHTML =
-      "Enter proper Name";
+      "Enter proper Name in Upper case";
     document.getElementById("promptMsg").style.display = "block";
     setTimeout(() => {
       let prompt = document.getElementById("promptMsg");
@@ -54,7 +54,7 @@ function RegisterSubmit() {
     }, 3000);
   }
   // Validation for Password.
-  else if (registerPassword.value == "") {
+  else if (/^[A-Za-z0-9@_]{6,10}$/.test(registerPassword.value)==true) {
     document.getElementById("registerPromptMessage").innerHTML =
       "Enter proper Password";
     document.getElementById("promptMsg").style.display = "block";
@@ -110,8 +110,6 @@ function LogIn() {
           } else {
             alert("Wrong Password");
           }
-        } else {
-          alert("Invalid UserName");
         }
       }
     });
@@ -507,7 +505,6 @@ function StartProcessingFun(userId, detailsId) {
       "Content-type": "application/json; charset=UTF-8",
     },
   })
-//   console.log(objectData.LMSrequest[detailsId-1].Processed,"after processed");
 .then(ShowDetails(),
 ShowAccepted())
 })
@@ -610,7 +607,7 @@ function SigninPasswordToggle(){
   passwordToggle.classList.toggle('bi-eye');
 }
 function SignupPasswordToggle(){
-  const passwordToggle = document.getElementById("SignupPasswordToggle");
+  const passwordToggle = document.getElementById("SignupPaswordIcon");
   const password = document.getElementById("registerPassword");
   console.log("Eye clicked");
   const type = password.getAttribute('type') === 'password'? 'text' : 'password';
